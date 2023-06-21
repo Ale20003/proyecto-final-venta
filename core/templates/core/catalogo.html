@@ -1,0 +1,54 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+      <main>
+        {% load static %}
+        <div class="container color">
+          <div class="row">
+              <table class="table table-striped" id="tabla1">
+              </table>
+              <table class=" table table-striped" id="tabla2">
+              </table>
+              <table class="table table-striped" id="tabla3">
+
+              </table>
+          </div>
+      </div>
+      <script class="color">
+        fetch("https://fakestoreapi.com/products/category/men's clothing")
+            .then(response => response.json())
+            .then(datos => {
+                let cad = '<tr><th><h1 class="color">Catalogo Hombre</h1></th></tr>';
+                for (let usuario of datos) {
+                    cad += `<tr><td><img src="${usuario.image}"</td></tr>`; 
+                }
+                document.getElementById("tabla1").innerHTML = cad;
+              }); 
+      </script>
+      <script class="color">
+            
+            fetch("https://fakestoreapi.com/products/category/women's clothing")
+            .then(response => response.json())
+            .then(datos => {
+                let cad = '<tr><th><h1 class="color">Catalogo Mujer</h1></th></tr>';
+                for (let usuario of datos) {
+                    cad += `<tr><td> <img src="${usuario.image}"/></td></tr>`; 
+                }
+                document.getElementById("tabla2").innerHTML = cad;
+            });     
+    </script>
+    <script>
+      fetch("https://fakestoreapi.com/products/category/jewelery")
+            .then(response => response.json())
+            .then(datos => {
+                let cad = '<tr><th><h1 class="color">Catalogo joyeria</h1></th></tr>';
+                for (let usuario of datos) {
+                    cad += `<tr><td> <img src="${usuario.image}"/></td></tr>`; 
+                }
+                document.getElementById("tabla3").innerHTML = cad;
+            }); 
+    </script>
+      </main>
+
+{% endblock %}
+   

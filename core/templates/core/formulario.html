@@ -1,0 +1,58 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+    <main>
+      {% load static %}
+        <form class="row g-3">
+    <div class="container color">
+        <div class="row">
+            <h4>formulario de validaciones</h4>
+            <div class="col-5">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="txtnombre" placeholder="Ingrese Nombre(Minimo 10 caracteres)">
+                <label>Apellido paterno</label>
+                <input type="text" class="form-control" id="txtappaterno" placeholder="Ingrese Apellido paterno(Minimo 10 caracteres)">
+                <label>Apellido materno</label>
+                <input type="text" class="form-control" id="txtapmaterno" placeholder="Ingrese Apellido materno(Minimo 10 caracteres)">
+                <label>Edad</label>
+                <input type="number" class="form-control" id="numberedad" placeholder="Ingrese Edad">
+                <label class="form-check-label">Rut</label><br>
+                <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" id="rbtnrut" role="switch"><br>
+              </div>
+                <input type="text" class="form-control" id="txtident" placeholder="Debe ingresar un rut">
+                <label>Fecha Nacimiento</label>
+                <input type="date" class="form-control" id="datefechanacimiento">
+                <label>Correo</label>
+                <input type="email" class="form-control" id="txtcorreo" placeholder="Ingrese Email">
+                <label>Locación</label>
+                <select class="form-select" id="cbxlocacion">
+                  <option value ="0">Debe Seleccionar una Ciudad</option>
+                    <optgroup label="Region Metropolitana">
+                        <option value="1"> Maipu</option>
+                        <option value="1"> Pudahuel</option>
+                        <option value="1"> Las Condes</option>
+                        <option value="1"> Providencia</option>
+                    </optgroup>
+                    <optgroup label="Region de Valparaiso">
+                        <option value="1"> Valparaiso</option>
+                        <option value="1"> Belloto</option>
+                        <option value="1"> Villa Alemana</option>
+                        <option value="1"> Viña del Mar</option>
+                    </optgroup>
+                    <optgroup label="¡Proximamente estaremos en más lugares!">
+                    </optgroup>
+                </select>
+                <label>Comentarios</label>
+                <textarea class="form-control" id="tacomentario"></textarea><br>
+
+                <input id="inenviar" type="submit" value="Enviar" class="btn btn-primary">
+                <input type="reset" value="Limpiar" class="btn btn-danger">
+              </form>  
+            </div>
+        </div>
+        </div>
+    </div>
+    </main>
+{% endblock %}

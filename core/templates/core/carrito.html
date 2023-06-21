@@ -1,0 +1,27 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+    <main>
+        {% load static %}
+        <section class="py-5 text-center container">
+            <h1>!Compra Ahora¡ </h1>
+        </section>
+        {% for c in carrito %}
+        <div class="body">
+            <div class="container">
+                <div class="row row-cols-2 row-cols-sm-4 row-cols-md-5 g-5" >
+                    
+                    <div class="col" >
+                        <div class="" >
+                            <img src="{{c.file.url}}" class="img-fluid" alt="...">
+                            <div class="card-body">
+                                <p class="textonav">{{c.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
